@@ -24,6 +24,16 @@ export function Board(props: IBoardProps) {
     return gridRows;
   }
 
+  console.log('test')
+  console.log('test')
+  console.log('test')
+  console.log('test')
+  console.log('test')
+  console.log('test')
+  console.log('test')
+  console.log('test')
+  console.log('test')
+
   return (
     <div className="board">
       {getGrid(GridRowSize, GridColumnSize)}
