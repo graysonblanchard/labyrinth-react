@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.square {
+  color: black;
+  font-size: 14px;
+  height: 75px;
+  width: 75px;
+  border: 1px solid black;
+}
+
+.square.white {
+  background-color: white;
+  color: black;
+}
+
+.square.black {
+  background-color: black;
+  color: white;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  max-width: 616px;
+  max-height: 616px;
+}
+
+.btnFlipColor {
+  margin: 20px auto;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: #00ffbf;
+  outline: none;
+  font-size: 18px;
+}
+
+.btnFlipColor:hover {
+  cursor: pointer;
+}
