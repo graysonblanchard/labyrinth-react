@@ -14,9 +14,7 @@ export interface ISquareProps {
 }
 
 export function Square(props: ISquareProps) {
-  const { xCoor, yCoor, squareType } = {...props}
+  const { squareType } = {...props}
 
-  return <div className={`square ${squareType}`}>
-    {/* xCoor + ', ' + yCoor */}
-  </div>;
+  return <div className={`square ${squareType}`} />
 }

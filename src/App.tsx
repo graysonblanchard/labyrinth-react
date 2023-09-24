@@ -14,19 +14,24 @@ function App() {
           difficulty={diff}
           isGameStarted={isGameStarted}
         />
-        {isGameStarted &&
-          <button onClick={() => { setIsGameStarted(false) }}>Quit</button>
-        }
-        {!isGameStarted &&
-          <div>
-            <select className='select-difficulty' onChange={(e) => { setDiff(e.target.value as Difficulty); }}>
-              <option value={Difficulty.Easy}>{Difficulty.Easy}</option>
-              <option value={Difficulty.Medium}>{Difficulty.Medium}</option>
-              <option value={Difficulty.Hard}>{Difficulty.Hard}</option>
-            </select>
-            <button onClick={() => { setIsGameStarted(true) }}>Start</button>
-          </div>
-        }
+        <div className='game-options'>
+          {isGameStarted &&
+            <button className='btnPrimary' onClick={() => { setIsGameStarted(false) }}>Quit</button>
+          }
+          {!isGameStarted &&
+            <>
+              <div className='select-group'>
+                <span className='select-label'>Difficulty:</span>
+                <select className='select-difficulty' onChange={(e) => { setDiff(e.target.value as Difficulty); }}>
+                  <option value={Difficulty.Easy}>{Difficulty.Easy}</option>
+                  <option value={Difficulty.Medium}>{Difficulty.Medium}</option>
+                  <option value={Difficulty.Hard}>{Difficulty.Hard}</option>
+                </select>
+              </div>
+              <button className='btnPrimary' onClick={() => { setIsGameStarted(true) }}>Start</button>
+            </>
+          }
+        </div>
       </header>
     </div>
   );

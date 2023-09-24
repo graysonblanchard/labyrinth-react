@@ -2,37 +2,110 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  max-width: 600px;
+  max-height: 600px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.board .square {
+  color: black;
+  font-size: 14px;
+  border: 1px solid black;
+}
+
+.board.easy .square {
+  height: 73px;
+  width: 73px;
+}
+
+.board.medium .square {
+  height: 58px;
+  width: 58px;
+}
+
+.board.hard .square {
+  height: 48px;
+  width: 48px;
+}
+
+.board .square.space {
+  background-color: white;
+  color: black;
+}
+
+.board .square.wall {
+  background-color: black;
+  color: white;
+}
+
+.board .square.player {
+  background-color: #00ffbf;
+}
+
+.board .square.goal {
+  background-color: gold;
+}
+
+.game-options {
+  display: flex;
+  position: absolute;
+  right: 280px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnPrimary {
+  padding: 8px 22px;
+  font-size: 16px;
+  border: 1px solid #fff8e7;
+  background-color: #267762;
+  border-radius: 25px;
+  color: #fff8e7;
+}
+
+.btnPrimary:hover {
+  cursor: pointer;
+  background-color: #fff8e7;
+  color: #282c34;
+}
+
+.select-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.select-label {
+  color: #fff8e7;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.select-difficulty {
+  padding: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #fff8e7;
+  border-radius: 5px;
+  background-color: #fff8e7;
+}
+
+.select-difficulty:hover {
+  cursor: pointer;
+  border-color: #282c34;
 }
