@@ -12,41 +12,49 @@ code {
     monospace;
 }
 
-.square {
-  color: black;
-  font-size: 14px;
-  height: 75px;
-  width: 75px;
-  border: 1px solid black;
-}
-
-.square.white {
-  background-color: white;
-  color: black;
-}
-
-.square.black {
-  background-color: black;
-  color: white;
-}
-
 .board {
   display: flex;
   flex-wrap: wrap;
   background-color: white;
-  max-width: 616px;
-  max-height: 616px;
+  max-width: 600px;
+  max-height: 600px;
 }
 
-.btnFlipColor {
-  margin: 20px auto;
-  padding: 10px 15px;
-  border-radius: 20px;
+.board .square {
+  color: black;
+  font-size: 14px;
+  border: 1px solid black;
+}
+
+.board.easy .square {
+  height: 73px;
+  width: 73px;
+}
+
+.board.medium .square {
+  height: 58px;
+  width: 58px;
+}
+
+.board.hard .square {
+  height: 48px;
+  width: 48px;
+}
+
+.board .square.space {
+  background-color: white;
+  color: black;
+}
+
+.board .square.wall {
+  background-color: black;
+  color: white;
+}
+
+.board .square.player {
   background-color: #00ffbf;
-  outline: none;
-  font-size: 18px;
 }
 
-.btnFlipColor:hover {
-  cursor: pointer;
+.board .square.goal {
+  background-color: gold;
 }

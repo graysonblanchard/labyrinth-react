@@ -1,19 +1,22 @@
 import * as React from "react";
 
-export enum SquareColor {
-  white = 'white',
-  black = 'black'
+export enum SquareTypes {
+  Wall = 'wall',
+  Space = 'space',
+  Player = 'player',
+  Goal = 'goal'
 }
 
 export interface ISquareProps {
-  x: number,
-  y: number,
-  color: SquareColor;
+  xCoor: number,
+  yCoor: number,
+  squareType: SquareTypes
 }
 
 export function Square(props: ISquareProps) {
-  const { x, y, color } = {...props}
-  return <div className={`square ${color}`}>
-    {x + ', ' + y}
+  const { xCoor, yCoor, squareType } = {...props}
+
+  return <div className={`square ${squareType}`}>
+    {/* xCoor + ', ' + yCoor */}
   </div>;
 }
