@@ -2,7 +2,17 @@ import { SquareTypes } from "./Square";
 
 export const EasyMaps: SquareTypes[][][] = [
     [
+        [SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
         [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
+        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
+        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
+        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
+        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
+        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
+        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Goal]
+    ],
+    [
+        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
         [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
         [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
         [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
@@ -12,17 +22,7 @@ export const EasyMaps: SquareTypes[][][] = [
         [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Goal]
     ],
     [
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Goal]
-    ],
-    [
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
+        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
         [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
         [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
         [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],

@@ -38,35 +38,34 @@ function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCoun
       break;
   }
 
-  console.log('currentMap', currentMap);
-
   const mapRowSize = currentMap.length;
   const mapColumnSize = currentMap[0].length;
 
-  let gridRows: any[] = [];
+  let newGrid: React.ReactElement[][] = [];
+
   for(let i = mapRowSize - 1; i >= 0; i--) {
+    let gridRow = [];
+
     for(let j = 0; j < mapColumnSize; j++) {
       let squareType = currentMap[i][j];
       if(playerPosition[0] === i && playerPosition[1] === j) {
         squareType = SquareTypes.Player
       }
-      gridRows.push(
+      gridRow.push(
         <Square
           xCoor={j}
           yCoor={i}
           squareType={squareType}
-          key={'square-' + i + ',' + j}
+          key={'square-' + i + '-' + j}
         />)
     }
+
+    newGrid.push(gridRow);
   }
-  return gridRows;
+  return newGrid;
 }
 
-function handleMove(currentPosition: number[], currentMap: SquareTypes[][], direction: Direction) {
-  console.log('handleMove', currentPosition, currentMap, direction);
-
-  // add logic to check for walls etc...
-
+function handleMove(currentPosition: number[], grid: React.ReactElement[][], direction: Direction) {
   let newPosition = currentPosition;
 
   switch (direction) {
@@ -83,11 +82,19 @@ function handleMove(currentPosition: number[], currentMap: SquareTypes[][], dire
       newPosition = [currentPosition[0], currentPosition[1] + 1];
       break;
     default:
-      console.warn('Undetected move')
+      console.warn('Undetected move');
       break;
   }
+  
+  const squareAtNewPosition = grid[(grid.length - 1) - newPosition[0]]
+    ? (grid[(grid.length - 1) - newPosition[0]][newPosition[1]] ? grid[(grid.length - 1) - newPosition[0]][newPosition[1]] : undefined)
+    : undefined;
 
-  return newPosition;
+  const isWall = squareAtNewPosition ? squareAtNewPosition.props.squareType === SquareTypes.Wall : false;
+  const isOutOfBounds = newPosition[0] < 0 || newPosition[0] >= grid.length ||
+                        newPosition[1] < 0 || newPosition[1] >= grid.length;
+
+  return (isWall || isOutOfBounds) ? currentPosition : newPosition;
 }
 
 export function Board(props: IBoardProps) {
@@ -112,10 +119,16 @@ export function Board(props: IBoardProps) {
   document.onkeydown = (e) => {
     if(isGameStarted && (e.key === Direction.Up || e.key === Direction.Down || e.key === Direction.Left || e.key === Direction.Right)) {
       let newPosition = handleMove(playerPosition, grid, e.key as Direction)
-      setPlayerPosition(newPosition);
-      setMoveCount(moveCount + 1);
+
+      if(newPosition !== playerPosition) {
+        setPlayerPosition(newPosition);
+        setMoveCount(moveCount + 1);
+      }
     }
   }
+
+  // TODO:
+  // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX
 
   return (
     <div className={`board ${props.difficulty}`}>
