@@ -44,7 +44,7 @@ function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCoun
   let newGrid: React.ReactElement[][] = [];
 
   for(let i = mapRowSize - 1; i >= 0; i--) {
-    let gridRow = [];
+    let gridRow: React.ReactElement[] = [];
 
     for(let j = 0; j < mapColumnSize; j++) {
       let squareType = currentMap[i][j];
@@ -98,14 +98,13 @@ function handleMove(currentPosition: number[], grid: React.ReactElement[][], dir
 }
 
 export function Board(props: IBoardProps) {
-  const { difficulty, isGameStarted } = {...props};
+  const {difficulty, isGameStarted} = {...props};
   const [moveCount, setMoveCount] = useState<number>(0);
   const [playerPosition, setPlayerPosition] = useState<number[]>([0,0]);
   const [grid, setGrid] = useState(generateGrid(difficulty, playerPosition, moveCount));
 
   useEffect(() => {
-    let newGrid = generateGrid(difficulty, playerPosition, moveCount);
-    setGrid(newGrid);
+    setGrid(generateGrid(difficulty, playerPosition, moveCount));
   }, [difficulty, playerPosition, moveCount]);
 
   useEffect(() => {

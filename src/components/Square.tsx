@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export enum SquareTypes {
   Wall = 'wall',
   Space = 'space',
@@ -14,7 +12,7 @@ export interface ISquareProps {
 }
 
 export function Square(props: ISquareProps) {
-  const { squareType } = {...props}
+  const {squareType} = {...props}
 
   return <div className={`square ${squareType}`} />
 }
