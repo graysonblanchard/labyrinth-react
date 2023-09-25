@@ -23,7 +23,7 @@ function App() {
               <>
                 <div className='select-group'>
                   <span className='select-label'>Difficulty:</span>
-                  <select className='select-difficulty' onChange={(e) => { setDiff(e.target.value as Difficulty); }}>
+                  <select className='select-difficulty' value={diff} onChange={(e) => { setDiff(e.target.value as Difficulty); }}>
                     <option value={Difficulty.Easy}>{Difficulty.Easy}</option>
                     <option value={Difficulty.Medium}>{Difficulty.Medium}</option>
                     <option value={Difficulty.Hard}>{Difficulty.Hard}</option>
