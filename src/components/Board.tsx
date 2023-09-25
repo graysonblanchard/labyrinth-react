@@ -56,7 +56,8 @@ function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCoun
           xCoor={j}
           yCoor={i}
           squareType={squareType}
-          key={'square-' + i + '-' + j}
+          key={'square ' + i + '-' + j}
+          className={'square ' + i + '-' + j}
         />)
     }
 
@@ -127,7 +128,11 @@ export function Board(props: IBoardProps) {
   }
 
   // TODO:
+  // - ADD WINNING CHECK
+  // - MENU OPTIONS (RESTART, RETRY COUNT, ETC.)
+  // - ADD STYLES
   // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX
+  // - LEADERBOARD ON LEFT SIDE?
 
   return (
     <div className={`board ${props.difficulty}`}>

@@ -8,11 +8,12 @@ export enum SquareTypes {
 export interface ISquareProps {
   xCoor: number,
   yCoor: number,
-  squareType: SquareTypes
+  squareType: SquareTypes,
+  className: string
 }
 
 export function Square(props: ISquareProps) {
-  const {squareType} = {...props}
+  const {squareType, className} = {...props}
 
-  return <div className={`square ${squareType}`} />
+  return <div className={`${className} ${squareType}`} />
 }

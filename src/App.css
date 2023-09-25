@@ -29,6 +29,9 @@
   color: black;
   font-size: 14px;
   border: 1px solid black;
+  border-radius: 10px;
+  transition: all 0.05s;
+  border-color: #5d5b54;
 }
 
 .board.easy .square {
@@ -57,11 +60,11 @@
 }
 
 .board .square.player {
-  background-color: #00ffbf;
+  background-color: #02d8a3;
 }
 
 .board .square.goal {
-  background-color: gold;
+  background-color: #ffce44;
 }
 
 .game-options {
@@ -113,4 +116,8 @@
 .select-difficulty:hover {
   cursor: pointer;
   border-color: #282c34;
+}
+
+.select-difficulty:focus {
+  outline: none;
 }
