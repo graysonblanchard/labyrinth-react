@@ -136,12 +136,12 @@ export function Board(props: IBoardProps) {
   }
 
   // TODO:
-  // - ADD WINNING CHECK
-  // - MENU OPTIONS (RESTART, RETRY COUNT, ETC.)
-  // - ADD STYLES
-  // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX
-  // - LEADERBOARD ON LEFT SIDE?
-  // - DONT USE RETRY COUNT FOR RERENDER?
+  // - ADD WINNING MODAL
+  // - MORE MENU OPTIONS?
+  // - BETTER STYLES
+  // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX (!)
+  // - CREATE DIFFERENT COMPONENTS TO BREAK THINGS UP FURTHER (!)
+  // - ADD DB / API TO LEADERBOARD?
 
   return (
     <div className={`board ${props.difficulty}`}>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Board } from './components/Board';
 import { Difficulty } from './components/Board';
+import { HighScores } from './components/HighScores';
 
 function App() {
   const [diff, setDiff] = useState<Difficulty>(Difficulty.Easy);
@@ -12,7 +13,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className='board-container'>
+        <div className='game-container'>
+          <div className='title-and-highscores'>
+            <h1 className='game-title'>Labyrinth</h1>
+            <HighScores highScores={[{ name: 'grayson', score: 3 }]}/>
+          </div>
           <Board
             difficulty={diff}
             isGameStarted={isNewGameStarted}
