@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/9015d8e1-5af2-479d-bb85-8ea04d5e1856/resourceGroups/GB-Projects-Dev/providers/Microsoft.Web/sites/gb-labyrinth",
+  "appService.deploySubpath": "."
+}

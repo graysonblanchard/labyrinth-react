@@ -15,7 +15,7 @@ function App() {
       <header className="App-header">
         <div className='game-container'>
           <div className='title-and-highscores'>
-            <h1 className='game-title'>Labyrinth</h1>
+            <h1 className='game-title'>Labyrinth Test</h1>
             <HighScores highScores={[{ name: 'grayson', score: 3 }]}/>
           </div>
           <Board
