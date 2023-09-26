@@ -77,8 +77,15 @@
   align-items: center;
 }
 
+.retry-count {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
 .btnPrimary {
   padding: 8px 22px;
+  min-width: 90px;
+  margin: 10px 0;
   font-size: 16px;
   border: 1px solid #fff8e7;
   background-color: #267762;

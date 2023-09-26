@@ -19,6 +19,8 @@ export enum Direction {
 export interface IBoardProps {
   difficulty: Difficulty;
   isGameStarted: boolean;
+  isRetryGame: boolean;
+  retryCount: number;
 }
 
 function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCount: number) {
@@ -33,8 +35,6 @@ function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCoun
       break;
     case Difficulty.Hard:
       currentMap = HardMaps[moveCount % 3];
-      break;
-    default:
       break;
   }
 
@@ -82,47 +82,55 @@ function handleMove(currentPosition: number[], grid: React.ReactElement[][], dir
     case Direction.Right:
       newPosition = [currentPosition[0], currentPosition[1] + 1];
       break;
-    default:
-      console.warn('Undetected move');
-      break;
   }
   
   const squareAtNewPosition = grid[(grid.length - 1) - newPosition[0]]
     ? (grid[(grid.length - 1) - newPosition[0]][newPosition[1]] ? grid[(grid.length - 1) - newPosition[0]][newPosition[1]] : undefined)
     : undefined;
 
+  const isGoal = squareAtNewPosition ? squareAtNewPosition.props.squareType === SquareTypes.Goal : false;
   const isWall = squareAtNewPosition ? squareAtNewPosition.props.squareType === SquareTypes.Wall : false;
   const isOutOfBounds = newPosition[0] < 0 || newPosition[0] >= grid.length ||
                         newPosition[1] < 0 || newPosition[1] >= grid.length;
+
+  if(isGoal)
+    newPosition.push(-1);
 
   return (isWall || isOutOfBounds) ? currentPosition : newPosition;
 }
 
 export function Board(props: IBoardProps) {
-  const {difficulty, isGameStarted} = {...props};
+  const {difficulty, isGameStarted, isRetryGame, retryCount} = {...props};
   const [moveCount, setMoveCount] = useState<number>(0);
   const [playerPosition, setPlayerPosition] = useState<number[]>([0,0]);
   const [grid, setGrid] = useState(generateGrid(difficulty, playerPosition, moveCount));
+  const [isGameOver, setIsGameOver] = useState<boolean>(false);
 
   useEffect(() => {
     setGrid(generateGrid(difficulty, playerPosition, moveCount));
   }, [difficulty, playerPosition, moveCount]);
 
   useEffect(() => {
-    if(isGameStarted === false) {
+    if(!isGameStarted || isRetryGame) {
       setMoveCount(0);
+      setIsGameOver(false);
       setPlayerPosition([0, 0]);
       setGrid(generateGrid(difficulty, [0,0], 0));
     }
-  }, [difficulty, isGameStarted]);
+  }, [difficulty, isGameStarted, isRetryGame, retryCount]);
 
   document.onkeydown = (e) => {
-    if(isGameStarted && (e.key === Direction.Up || e.key === Direction.Down || e.key === Direction.Left || e.key === Direction.Right)) {
-      let newPosition = handleMove(playerPosition, grid, e.key as Direction)
+    if(isGameStarted && !isGameOver && (e.key === Direction.Up || e.key === Direction.Down || e.key === Direction.Left || e.key === Direction.Right)) {
+      let newPosition = handleMove(playerPosition, grid, e.key as Direction);
+
+      console.log('newPosition', newPosition);
 
       if(newPosition !== playerPosition) {
         setPlayerPosition(newPosition);
         setMoveCount(moveCount + 1);
+      }
+      if(newPosition.includes(-1)) {
+        setIsGameOver(true);
       }
     }
   }
@@ -133,6 +141,7 @@ export function Board(props: IBoardProps) {
   // - ADD STYLES
   // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX
   // - LEADERBOARD ON LEFT SIDE?
+  // - DONT USE RETRY COUNT FOR RERENDER?
 
   return (
     <div className={`board ${props.difficulty}`}>

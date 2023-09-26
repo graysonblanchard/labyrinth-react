@@ -5,7 +5,9 @@ import { Difficulty } from './components/Board';
 
 function App() {
   const [diff, setDiff] = useState<Difficulty>(Difficulty.Easy);
-  const [isGameStarted, setIsGameStarted] = useState<boolean>(false);
+  const [isNewGameStarted, setIsNewGameStarted] = useState<boolean>(false);
+  const [isRetryGame, setIsRetryGame] = useState<boolean>(false);
+  const [retryCount, setRetryCount] = useState<number>(0);
 
   return (
     <div className="App">
@@ -13,13 +15,36 @@ function App() {
         <div className='board-container'>
           <Board
             difficulty={diff}
-            isGameStarted={isGameStarted}
+            isGameStarted={isNewGameStarted}
+            isRetryGame={isRetryGame}
+            retryCount={retryCount}
           />
           <div className='game-options'>
-            {isGameStarted &&
-              <button className='btnPrimary' onClick={() => { setIsGameStarted(false) }}>Quit</button>
+            {(isNewGameStarted || isRetryGame) &&
+              <>
+                <span className='retry-count'>Retries: {retryCount}</span>
+                <button
+                  className='btnPrimary'
+                  onClick={() => {
+                    setIsRetryGame(true);
+                    setRetryCount(retryCount + 1)
+                  }}
+                  >
+                  Retry
+                </button>
+                <button
+                  className='btnPrimary'
+                  onClick={() => {
+                    setIsNewGameStarted(false);
+                    setIsRetryGame(false);
+                    setRetryCount(0);
+                  }}
+                  >
+                  Quit
+                  </button>
+              </>
             }
-            {!isGameStarted &&
+            {!isNewGameStarted && !isRetryGame &&
               <>
                 <div className='select-group'>
                   <span className='select-label'>Difficulty:</span>
@@ -29,7 +54,7 @@ function App() {
                     <option value={Difficulty.Hard}>Hard</option>
                   </select>
                 </div>
-                <button className='btnPrimary' onClick={() => { setIsGameStarted(true) }}>Start</button>
+                <button className='btnPrimary' onClick={() => { setIsNewGameStarted(true) }}>Start</button>
               </>
             }
           </div>
