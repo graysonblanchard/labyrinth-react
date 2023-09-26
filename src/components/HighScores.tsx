@@ -15,7 +15,7 @@ export function HighScores(props: IHighScoresProps) {
     <div className="high-scores">
         <span className="high-scores-title">High Scores:</span>
         <div className="high-scores-list">
-            {highScores.map((highScore: IHighScore) => {
+            {highScores.slice(0, 9).map((highScore: IHighScore) => {
                 return <span className="high-score">{highScore.name + ': ' + highScore.score}</span>
             })}
         </div>

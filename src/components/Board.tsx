@@ -141,7 +141,7 @@ export function Board(props: IBoardProps) {
   // - BETTER STYLES
   // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX (!)
   // - CREATE DIFFERENT COMPONENTS TO BREAK THINGS UP FURTHER (!)
-  // - ADD DB / API TO LEADERBOARD?
+  // - ADD DB / API TO LEADERBOARD? (pass difficulty)
 
   return (
     <div className={`board ${props.difficulty}`}>
