@@ -124,8 +124,6 @@ export function Board(props: IBoardProps) {
     if(isGameStarted && !isGameOver && (e.key === Direction.Up || e.key === Direction.Down || e.key === Direction.Left || e.key === Direction.Right)) {
       let newPosition = handleMove(playerPosition, grid, e.key as Direction);
 
-      console.log('newPosition', newPosition);
-
       if(newPosition !== playerPosition) {
         setPlayerPosition(newPosition);
         setMoveCount(moveCount + 1);
