@@ -21,6 +21,7 @@ export interface IBoardProps {
   isGameStarted: boolean;
   isRetryGame: boolean;
   retryCount: number;
+  triggerGameOver(): any;
 }
 
 function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCount: number) {
@@ -100,7 +101,7 @@ function handleMove(currentPosition: number[], grid: React.ReactElement[][], dir
 }
 
 export function Board(props: IBoardProps) {
-  const {difficulty, isGameStarted, isRetryGame, retryCount} = {...props};
+  const {difficulty, isGameStarted, isRetryGame, retryCount, triggerGameOver} = {...props};
   const [moveCount, setMoveCount] = useState<number>(0);
   const [playerPosition, setPlayerPosition] = useState<number[]>([0,0]);
   const [grid, setGrid] = useState(generateGrid(difficulty, playerPosition, moveCount));
@@ -131,19 +132,18 @@ export function Board(props: IBoardProps) {
       }
       if(newPosition.includes(-1)) {
         setIsGameOver(true);
+        triggerGameOver();
       }
     }
   }
 
   // TODO:
-  // - ADD WINNING MODAL
-  // - MORE MENU OPTIONS?
-  // - BETTER STYLES
   // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX (!)
   // - CREATE DIFFERENT COMPONENTS TO BREAK THINGS UP FURTHER (!)
   // - ADD DB / API TO LEADERBOARD? (pass difficulty)
   
   // - for yuga -> HighScoreProps | undefined
+  // - for yuga -> end of game modal (only board has awareness)
 
   return (
     <div className={`board ${props.difficulty}`}>

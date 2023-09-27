@@ -17,6 +17,8 @@ function App() {
   const [isRetryGame, setIsRetryGame] = useState<boolean>(false);
   const [retryCount, setRetryCount] = useState<number>(0);
   const [highScores, setHighScores] = useState<IHighScore[]>();
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [username, setUsername] = useState<string>('');
 
   useEffect(() => {
     fetch('/highScores').then((res) => {
@@ -28,8 +30,34 @@ function App() {
     });
   }, []);
 
+  function submitScore() {
+    console.log('score submitted');
+    // call manage stored procedure...
+    resetGame();
+  }
+
+  function resetGame() {
+    setShowModal(false);
+    setIsNewGameStarted(false);
+    setIsRetryGame(false);
+  }
+
   return (
     <div className="App">
+      {showModal &&
+        <div className='winning-modal'>
+          <div className='winning-modal-background'></div>
+          <div className='winning-modal-window'>
+            <div className='winning-modal-close' onClick={() => { resetGame(); }} />
+            <h1>You win!</h1>
+            <div className='winning-modal-scores'>Score: {retryCount} retries</div>
+            <div className='winning-modal-prompt'>
+              <input placeholder='Enter name...' id='username' maxLength={12} value={username} onChange={(e) => { setUsername(e.target.value)}} />
+              <button className='winning-modal-submit btnPrimary' onClick={() => { submitScore(); }}>Submit</button>
+            </div>
+          </div>
+        </div>
+      }
       <header className="App-header">
         <div className='game-container'>
           <div className='title-and-highscores'>
@@ -41,30 +69,22 @@ function App() {
             isGameStarted={isNewGameStarted}
             isRetryGame={isRetryGame}
             retryCount={retryCount}
+            triggerGameOver={() => {
+              setTimeout(() => {
+                setShowModal(true);
+              }, 200);
+            }}
           />
           <div className='game-options'>
             {(isNewGameStarted || isRetryGame) &&
               <>
                 <span className='retry-count'>Retries: {retryCount}</span>
-                <button
-                  className='btnPrimary'
-                  onClick={() => {
-                    setIsRetryGame(true);
-                    setRetryCount(retryCount + 1)
-                  }}
-                  >
+                <button className='btnPrimary' onClick={() => { setIsRetryGame(true); setRetryCount(retryCount + 1)}}>
                   Retry
                 </button>
-                <button
-                  className='btnPrimary'
-                  onClick={() => {
-                    setIsNewGameStarted(false);
-                    setIsRetryGame(false);
-                    setRetryCount(0);
-                  }}
-                  >
+                <button className='btnPrimary' onClick={() => { setIsNewGameStarted(false); setIsRetryGame(false); setRetryCount(0); }}>
                   Quit
-                  </button>
+                </button>
               </>
             }
             {!isNewGameStarted && !isRetryGame &&

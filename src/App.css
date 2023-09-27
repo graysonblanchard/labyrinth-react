@@ -174,3 +174,93 @@
 .select-difficulty:focus {
   outline: none;
 }
+
+.winning-modal {
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+}
+
+.winning-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  padding: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='none' stroke-width='0' viewBox='0 0 24 24' height='30px' width='30px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.winning-modal-close:hover {
+  cursor: pointer;
+}
+
+.winning-modal-background {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0.5;
+  display: flex;
+}
+
+.winning-modal-window {
+  z-index: 2;
+  background-color: #fff8e7;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, .4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 525px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #282c34;
+}
+
+.winning-modal-window h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+.winning-modal-scores {
+  font-size: 24px;
+  padding: 34px 0;
+}
+
+.winning-modal-window input {
+  font-size: 18px;
+  background-color: #fff8e7;
+  border: 1px solid #282c34;
+  border-radius: 5px;
+  padding: 8px;
+  margin-right: 20px;
+}
+
+.winning-modal-window input:focus {
+  outline: none;
+  border: 2px solid #282c34;
+  margin-top: -2px;
+  margin-right: 18px;
+}
+
+.winning-modal-submit {
+  border: 1px solid #267762;
+}
+
+.winning-modal-submit:hover {
+  background-color: #282c34;
+  border-color: #282c34;
+  color: #fff8e7;
+}
