@@ -35,7 +35,8 @@ function App() {
 
     const request = {
       name: username,
-      score: retryCount
+      score: retryCount,
+      difficulty: diff
     }
 
     fetch('/highScores', {
@@ -81,7 +82,7 @@ function App() {
         <div className='game-container'>
           <div className='title-and-highscores'>
             <h1 className='game-title'>Labyrinth</h1>
-            <HighScores highScores={highScores}/>
+            <HighScores highScores={highScores} difficulty={diff} />
           </div>
           <Board
             difficulty={diff}

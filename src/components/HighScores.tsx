@@ -1,19 +1,22 @@
 import * as React from 'react';
 import { MoonLoader } from 'react-spinners';
+import { Difficulty } from './Board';
 
 export interface IHighScore {
   Id: number;
   Name: string;
   Score: number;
+  Difficulty: Difficulty;
   Date?: Date;
 }
 
 export interface IHighScoresProps {
   highScores: IHighScore[] | undefined;
+  difficulty: Difficulty;
 }
 
 export function HighScores(props: IHighScoresProps) {
-  const { highScores } = { ...props };
+  const { highScores, difficulty } = { ...props };
 
   return (
     <div className="high-scores">
@@ -28,7 +31,7 @@ export function HighScores(props: IHighScoresProps) {
         {highScores && 
         // add pagination to show more than top 10?
           <div className="high-scores-list">
-              {highScores.slice(0, 10).map((highScore: IHighScore, index: number) => {
+              {highScores.filter((score: IHighScore) => { return score.Difficulty === difficulty }).slice(0, 10).map((highScore: IHighScore, index: number) => {
                 return (
                   <div className="high-score" key={'highScore-' + highScore.Id}>
                       <span className='high-score-name'>{(index + 1) + '. ' + highScore.Name}</span>
