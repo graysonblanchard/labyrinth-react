@@ -32,7 +32,22 @@ function App() {
 
   function submitScore() {
     console.log('score submitted');
-    // call manage stored procedure...
+
+    const request = {
+      name: username,
+      score: retryCount
+    }
+
+    fetch('/highScores', {
+      method: 'POST',
+      body: JSON.stringify(request) 
+    }).then((res) => {
+      return res.json();
+    })
+    .then((data: IBackendData) => {
+      console.log('highScores response', data.recordset);
+      setHighScores(data.recordset);
+    });
     resetGame();
   }
 
