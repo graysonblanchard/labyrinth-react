@@ -164,8 +164,8 @@ function App() {
                   <span className='select-label'>Difficulty:</span>
                   <select className='select-difficulty' value={diff} onChange={(e) => { setDiff(e.target.value as Difficulty); }}>
                     <option value={Difficulty.Easy}>Easy</option>
-                    <option value={Difficulty.Medium}>Medium</option>
-                    <option value={Difficulty.Hard}>Hard</option>
+                    <option disabled value={Difficulty.Medium}>Medium</option>
+                    <option disabled value={Difficulty.Hard}>Hard</option>
                   </select>
                 </div>
                 <button className='btnPrimary' onClick={() => { setIsNewGameStarted(true); }}>Start</button>
