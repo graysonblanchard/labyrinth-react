@@ -1,5 +1,5 @@
 import * as React from 'react';
-// import { MoonLoader } from 'react-spinners';
+import { MoonLoader } from 'react-spinners';
 
 export interface IHighScore {
   Id: number;
@@ -18,13 +18,13 @@ export function HighScores(props: IHighScoresProps) {
   return (
     <div className="high-scores">
         <span className="high-scores-title">High Scores:</span>
-        {/* {!highScores &&
+        {!highScores &&
           <MoonLoader
             size={40}
             color='#fff8e7'
             className='moon-loader'
           />
-        } */}
+        }
         {highScores && 
           <div className="high-scores-list">
               {highScores.map((highScore: IHighScore) => {

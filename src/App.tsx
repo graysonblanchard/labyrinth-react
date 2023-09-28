@@ -62,9 +62,7 @@ function App() {
         <div className='game-container'>
           <div className='title-and-highscores'>
             <h1 className='game-title'>Labyrinth</h1>
-            {highScores &&
-              <HighScores highScores={highScores}/>
-            }
+            <HighScores highScores={highScores}/>
           </div>
           <Board
             difficulty={diff}
