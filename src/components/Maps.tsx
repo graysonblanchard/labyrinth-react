@@ -1,118 +1,123 @@
 import { SquareTypes } from "./Square";
 
+const Wall = SquareTypes.Wall;
+const Space = SquareTypes.Space;
+const Goal = SquareTypes.Goal;
+//const Player = SquareTypes.Player;
+
 export const EasyMaps: SquareTypes[][][] = [
     [
-        [SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall],
-        [SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall],
-        [SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall],
-        [SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall],
-        [SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Goal]
+        [Wall,Wall,Space,Space,Wall,Space,Wall,Space],
+        [Space,Wall,Wall,Wall,Space,Space,Wall,Wall],
+        [Wall,Space,Space,Wall,Wall,Wall,Space,Space],
+        [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+        [Wall,Space,Space,Wall,Wall,Space,Space,Space],
+        [Space,Wall,Wall,Wall,Space,Space,Wall,Wall],
+        [Space,Wall,Space,Space,Wall,Wall,Space,Wall],
+        [Wall,Wall,Space,Wall,Space,Space,Wall,Goal]
     ],
     [
-        [SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall],
-        [SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall],
-        [SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space],
-        [SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall],
-        [SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Goal]
+        [Wall,Space,Wall,Wall,Wall,Wall,Space,Wall],
+        [Space,Space,Wall,Wall,Space,Wall,Space,Wall],
+        [Space,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+        [Wall,Wall,Space,Wall,Wall,Space,Wall,Space],
+        [Space,Wall,Wall,Wall,Space,Wall,Wall,Space],
+        [Wall,Space,Wall,Space,Wall,Wall,Space,Space],
+        [Wall,Space,Wall,Wall,Space,Space,Wall,Wall],
+        [Space,Wall,Wall,Wall,Wall,Wall,Wall,Goal]
     ],
     [
-        [SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space],
-        [SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space],
-        [SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall],
-        [SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall],
-        [SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Space],
-        [SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Space,SquareTypes.Wall,SquareTypes.Wall,SquareTypes.Goal]
+        [Wall,Space,Wall,Wall,Space,Wall,Space,Space],
+        [Space,Wall,Space,Wall,Space,Space,Wall,Space],
+        [Wall,Space,Wall,Wall,Wall,Wall,Wall,Space],
+        [Wall,Wall,Wall,Space,Space,Wall,Space,Wall],
+        [Wall,Wall,Space,Wall,Wall,Space,Wall,Wall],
+        [Space,Wall,Wall,Space,Wall,Space,Wall,Space],
+        [Wall,Wall,Space,Wall,Wall,Wall,Space,Space],
+        [Wall,Space,Wall,Wall,Space,Wall,Wall,Goal]
     ]
 ];
 
 export const MedMaps: SquareTypes[][][] = [
     [
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Goal]
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
     ],
     [
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Goal]
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
     ],
     [
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Goal]
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
     ]
 ];
 
 export const HardMaps: SquareTypes[][][] = [
     [
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Goal]
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
     ],
     [
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Goal]
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
     ],
     [
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space],
-        [SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Space,SquareTypes.Goal]
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
     ]
 ];
