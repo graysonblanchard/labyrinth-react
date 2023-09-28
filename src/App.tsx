@@ -30,7 +30,7 @@ function App() {
     });
   }, []);
 
-  function submitScore() {
+  async function submitScore() {
     console.log('score submitted');
 
     const request = {
@@ -39,6 +39,7 @@ function App() {
     }
 
     fetch('/highScoresPost', {
+      method: 'POST',
       body: JSON.stringify(request) 
     }).then((res) => {
       return res.json();
