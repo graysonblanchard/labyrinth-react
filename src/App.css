@@ -16,13 +16,13 @@
 
 .game-container {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .title-and-highscores {
-  position: absolute;
-  left: -275px;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 260px;
 }
 
 .game-title {
@@ -70,6 +70,7 @@
   flex-wrap: wrap;
   max-width: 600px;
   max-height: 600px;
+  margin: 0 56px;
 }
 
 .board .square {
@@ -116,10 +117,6 @@
 
 .game-options {
   display: flex;
-  position: absolute;
-  right: -140px;
-  top: 50%;
-  transform: translateY(-50%);
   flex-direction: column;
   align-items: center;
 }
