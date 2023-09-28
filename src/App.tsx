@@ -1,8 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Board } from './components/Board';
-import { Difficulty } from './components/Board';
 import { HighScores, IHighScore } from './components/HighScores';
+
+export enum Difficulty {
+  Easy = 'easy',
+  Medium = 'medium',
+  Hard = 'hard'
+}
+
+export enum MoveDirection {
+  Up = 'ArrowUp',
+  Down = 'ArrowDown',
+  Left = 'ArrowLeft',
+  Right = 'ArrowRight'
+}
 
 interface IBackendData {
   recordsets: IHighScore[][];

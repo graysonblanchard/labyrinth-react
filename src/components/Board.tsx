@@ -2,19 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Square } from './Square';
 import { SquareTypes } from "./Square";
 import { EasyMaps, MedMaps, HardMaps } from './Maps';
-
-export enum Difficulty {
-  Easy = 'easy',
-  Medium = 'medium',
-  Hard = 'hard'
-}
-
-export enum Direction {
-  Up = 'ArrowUp',
-  Down = 'ArrowDown',
-  Left = 'ArrowLeft',
-  Right = 'ArrowRight'
-}
+import { Difficulty, MoveDirection } from '../App';
 
 export interface IBoardProps {
   difficulty: Difficulty;
@@ -67,20 +55,20 @@ function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCoun
   return newGrid;
 }
 
-function handleMove(currentPosition: number[], grid: React.ReactElement[][], direction: Direction) {
+function handleMove(currentPosition: number[], grid: React.ReactElement[][], direction: MoveDirection) {
   let newPosition = currentPosition;
 
   switch (direction) {
-    case Direction.Up:
+    case MoveDirection.Up:
       newPosition = [currentPosition[0] + 1, currentPosition[1]];
       break;
-    case Direction.Down:
+    case MoveDirection.Down:
       newPosition = [currentPosition[0] - 1, currentPosition[1]];
       break;
-    case Direction.Left:
+    case MoveDirection.Left:
       newPosition = [currentPosition[0], currentPosition[1] - 1];
       break;
-    case Direction.Right:
+    case MoveDirection.Right:
       newPosition = [currentPosition[0], currentPosition[1] + 1];
       break;
   }
@@ -121,8 +109,8 @@ export function Board(props: IBoardProps) {
   }, [difficulty, isGameStarted, isRetryGame, retryCount]);
 
   document.onkeydown = (e) => {
-    if(isGameStarted && !isGameOver && (e.key === Direction.Up || e.key === Direction.Down || e.key === Direction.Left || e.key === Direction.Right)) {
-      let newPosition = handleMove(playerPosition, grid, e.key as Direction);
+    if(isGameStarted && !isGameOver && (e.key === MoveDirection.Up || e.key === MoveDirection.Down || e.key === MoveDirection.Left || e.key === MoveDirection.Right)) {
+      let newPosition = handleMove(playerPosition, grid, e.key as MoveDirection);
 
       if(newPosition !== playerPosition) {
         setPlayerPosition(newPosition);
@@ -138,8 +126,10 @@ export function Board(props: IBoardProps) {
   // TODO:
   // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX (!)
   // - CREATE DIFFERENT COMPONENTS TO BREAK THINGS UP FURTHER (!)
-  // - ADD DB / API TO LEADERBOARD? (pass difficulty)
-
+  //
+  // - include move count to high scores?
+  // - set/pull/clear retry count from local storage
+  //
   // - for yuga -> end of game modal (only board has awareness)
 
   return (
