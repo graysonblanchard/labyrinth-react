@@ -30,7 +30,7 @@ function App() {
     });
   }, []);
 
-  async function submitScore() {
+  function submitScore() {
     console.log('score submitted');
 
     const request = {
