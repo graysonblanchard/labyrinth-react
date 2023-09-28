@@ -139,8 +139,7 @@ export function Board(props: IBoardProps) {
   // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX (!)
   // - CREATE DIFFERENT COMPONENTS TO BREAK THINGS UP FURTHER (!)
   // - ADD DB / API TO LEADERBOARD? (pass difficulty)
-  
-  // - for yuga -> HighScoreProps | undefined
+
   // - for yuga -> end of game modal (only board has awareness)
 
   return (

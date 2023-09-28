@@ -31,7 +31,7 @@ export function HighScores(props: IHighScoresProps) {
               {highScores.slice(0, 10).map((highScore: IHighScore, index: number) => {
                 return (
                   <div className="high-score" key={'highScore-' + highScore.Id}>
-                      <span className='high-score-name'>{index + '. ' + highScore.Name}</span>
+                      <span className='high-score-name'>{(index + 1) + '. ' + highScore.Name}</span>
                       <span className='high-score-score'>{highScore.Score}</span>
                     </div>
                   ) 
