@@ -40,12 +40,16 @@ function App() {
 
     fetch('/highScoresPost', {
       method: 'POST',
-      body: JSON.stringify(request) 
+      body: JSON.stringify(request),
+      headers: {
+        "Content-Type": "application/json"
+      },
     }).then((res) => {
+      console.log("highScoresPost res", res)
       return res.json();
     })
     .then((data: IBackendData) => {
-      console.log('highScores response', data.recordset);
+      console.log('highScoresPost response', data.recordset);
       setHighScores(data.recordset);
     });
     resetGame();
