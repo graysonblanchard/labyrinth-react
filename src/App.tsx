@@ -59,6 +59,7 @@ function App() {
     setShowModal(false);
     setIsNewGameStarted(false);
     setIsRetryGame(false);
+    setRetryCount(0);
   }
 
   return (
