@@ -32,10 +32,10 @@ function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCoun
       currentMap = EasyMaps[moveCount % 3];
       break;
     case Difficulty.Medium:
-      currentMap = MedMaps[moveCount % 3];
+      currentMap = MedMaps[moveCount % 5];
       break;
     case Difficulty.Hard:
-      currentMap = HardMaps[moveCount % 3];
+      currentMap = HardMaps[moveCount % 7];
       break;
   }
 
