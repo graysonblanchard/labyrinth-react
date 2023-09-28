@@ -36,6 +36,7 @@
   flex-direction: column;
   align-items: center;
   border: 1px solid #fff8e7;
+  border-radius: 10px;
   background-color: #363531;
   padding: 15px 30px;
   height: 400px;
