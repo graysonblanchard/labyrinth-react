@@ -112,7 +112,7 @@ function App() {
                     <option disabled value={Difficulty.Hard}>Hard</option>
                   </select>
                 </div>
-                <button className='btnPrimary' onClick={() => { setIsNewGameStarted(true) }}>Start</button>
+                <button className='btnPrimary' onClick={() => { setIsNewGameStarted(true); setShowModal(true); }}>Start</button>
               </>
             }
           </div>
