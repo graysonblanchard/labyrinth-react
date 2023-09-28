@@ -127,6 +127,7 @@ export function Board(props: IBoardProps) {
   // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX (!)
   // - CREATE DIFFERENT COMPONENTS TO BREAK THINGS UP FURTHER (!)
   //
+  // - merge init into main branch, use main for deployment
   // - include move count to high scores?
   // - set/pull/clear retry count from local storage
   //

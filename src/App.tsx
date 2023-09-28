@@ -37,7 +37,7 @@ function App() {
       return res.json();
     })
     .then((data: IBackendData) => {
-      console.log('highScores response', data.recordset);
+      console.log('highScores get res', data.recordset);
       setHighScores(data.recordset);
     });
   }, []);
@@ -61,7 +61,7 @@ function App() {
       return res.json();
     })
     .then((data: IBackendData) => {
-      console.log('highScoresPost response', data.recordset);
+      console.log('highScores post res', data.recordset);
       setHighScores(data.recordset);
     });
     resetGame();
@@ -84,7 +84,7 @@ function App() {
             <h1>You win!</h1>
             <div className='winning-modal-scores'>Score: {retryCount} retries</div>
             <div className='winning-modal-prompt'>
-              <input placeholder='Enter name...' id='username' maxLength={12} value={username} onChange={(e) => { setUsername(e.target.value)}} />
+              <input placeholder='Enter name...' id='username' maxLength={18} value={username} onChange={(e) => { setUsername(e.target.value)}} />
               <button className='winning-modal-submit btnPrimary' onClick={() => { submitScore(); }}>Submit</button>
             </div>
           </div>
@@ -114,7 +114,7 @@ function App() {
                 <button className='btnPrimary' onClick={() => { setIsRetryGame(true); setRetryCount(retryCount + 1)}}>
                   Retry
                 </button>
-                <button className='btnPrimary' onClick={() => { setIsNewGameStarted(false); setIsRetryGame(false); setRetryCount(0); }}>
+                <button className='btnPrimary' onClick={() => { resetGame(); }}>
                   Quit
                 </button>
               </>
