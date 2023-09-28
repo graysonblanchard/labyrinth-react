@@ -2,8 +2,3 @@
   from = "/highScores"
   to = "https://labyrinth-node-d44f641bb105.herokuapp.com/highScores"
   status = 200
-
-[[redirects]]
-  from = "/highScoresPost"
-  to = "https://labyrinth-node-d44f641bb105.herokuapp.com/highScoresPost"
-  status = 200

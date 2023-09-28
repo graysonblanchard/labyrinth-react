@@ -26,11 +26,12 @@ export function HighScores(props: IHighScoresProps) {
           />
         }
         {highScores && 
+        // add pagination to show more than top 10?
           <div className="high-scores-list">
-              {highScores.slice(0, 10).map((highScore: IHighScore) => {
+              {highScores.slice(0, 10).map((highScore: IHighScore, index: number) => {
                 return (
                   <div className="high-score" key={'highScore-' + highScore.Id}>
-                      <span className='high-score-name'>{highScore.Name}</span>
+                      <span className='high-score-name'>{index + '. ' + highScore.Name}</span>
                       <span className='high-score-score'>{highScore.Score}</span>
                     </div>
                   ) 
