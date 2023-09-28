@@ -129,7 +129,7 @@ export function Board(props: IBoardProps) {
   //
   // - merge init into main branch, use main for deployment
   // - include move count to high scores?
-  // - set/pull/clear retry count from local storage
+  // - merge retryCount & localStorage to one variable?
   //
   // - for yuga -> end of game modal (only board has awareness)
 

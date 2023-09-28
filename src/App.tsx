@@ -82,10 +82,6 @@ function App() {
         };
 
     console.log('original currentStorage', currentStorage);
-    
-    currentStorage.easy = currentStorage.easy !== 0 ? currentStorage.easy : 0;
-    currentStorage.medium = currentStorage.medium !== 0 ? currentStorage.medium : 0;
-    currentStorage.hard = currentStorage.hard !== 0 ? currentStorage.hard : 0;
 
     switch (diff) {
       case Difficulty.Easy:
