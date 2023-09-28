@@ -38,14 +38,13 @@ function App() {
       score: retryCount
     }
 
-    fetch('/highScoresPost', {
+    fetch('/highScores', {
       method: 'POST',
       body: JSON.stringify(request),
       headers: {
         "Content-Type": "application/json"
       },
     }).then((res) => {
-      console.log("highScoresPost res", res)
       return res.json();
     })
     .then((data: IBackendData) => {
