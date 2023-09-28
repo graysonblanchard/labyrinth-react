@@ -33,6 +33,11 @@ function App() {
   const [username, setUsername] = useState<string>('');
 
   useEffect(() => {
+    let localStorageRetry = localStorage.getItem("retryCount") ? JSON.parse(localStorage.getItem("retryCount") as string)[diff] : 0;
+    setRetryCount(localStorageRetry);
+  }, [diff])
+
+  useEffect(() => {
     fetch('/highScores').then((res) => {
       return res.json();
     })
@@ -67,11 +72,44 @@ function App() {
     resetGame();
   }
 
+  function setLocalStorageRetry(value: number, diff: Difficulty) {
+    let currentStorage = localStorage.getItem("retryCount")
+      ? JSON.parse(localStorage.getItem("retryCount") as string)
+      : {
+          easy: 0,
+          medium: 0,
+          hard: 0
+        };
+
+    console.log('original currentStorage', currentStorage);
+    
+    currentStorage.easy = currentStorage.easy !== 0 ? currentStorage.easy : 0;
+    currentStorage.medium = currentStorage.medium !== 0 ? currentStorage.medium : 0;
+    currentStorage.hard = currentStorage.hard !== 0 ? currentStorage.hard : 0;
+
+    switch (diff) {
+      case Difficulty.Easy:
+        currentStorage.easy = value;
+        break;
+      case Difficulty.Medium:
+        currentStorage.medium = value;
+        break;
+      case Difficulty.Hard:
+        currentStorage.hard = value;
+      break;
+    }
+
+    console.log('updated currentStorage', currentStorage);
+
+    localStorage.setItem("retryCount", JSON.stringify(currentStorage));
+  }
+
   function resetGame() {
     setShowModal(false);
     setIsNewGameStarted(false);
     setIsRetryGame(false);
-    setRetryCount(0);
+    //setRetryCount(0);
+    //setLocalStorageRetry(0, diff);
   }
 
   return (
@@ -80,7 +118,7 @@ function App() {
         <div className='winning-modal'>
           <div className='winning-modal-background'></div>
           <div className='winning-modal-window'>
-            <div className='winning-modal-close' onClick={() => { resetGame(); }} />
+            <div className='winning-modal-close' onClick={() => { resetGame(); setRetryCount(0); }} />
             <h1>You win!</h1>
             <div className='winning-modal-scores'>Score: {retryCount} retries</div>
             <div className='winning-modal-prompt'>
@@ -104,6 +142,7 @@ function App() {
             triggerGameOver={() => {
               setTimeout(() => {
                 setShowModal(true);
+                setLocalStorageRetry(0, diff);
               }, 200);
             }}
           />
@@ -111,7 +150,7 @@ function App() {
             {(isNewGameStarted || isRetryGame) &&
               <>
                 <span className='retry-count'>Retries: {retryCount}</span>
-                <button className='btnPrimary' onClick={() => { setIsRetryGame(true); setRetryCount(retryCount + 1)}}>
+                <button className='btnPrimary' onClick={() => { setIsRetryGame(true); setRetryCount(retryCount + 1); setLocalStorageRetry(retryCount + 1, diff); }}>
                   Retry
                 </button>
                 <button className='btnPrimary' onClick={() => { resetGame(); }}>
@@ -125,8 +164,8 @@ function App() {
                   <span className='select-label'>Difficulty:</span>
                   <select className='select-difficulty' value={diff} onChange={(e) => { setDiff(e.target.value as Difficulty); }}>
                     <option value={Difficulty.Easy}>Easy</option>
-                    <option disabled value={Difficulty.Medium}>Medium</option>
-                    <option disabled value={Difficulty.Hard}>Hard</option>
+                    <option value={Difficulty.Medium}>Medium</option>
+                    <option value={Difficulty.Hard}>Hard</option>
                   </select>
                 </div>
                 <button className='btnPrimary' onClick={() => { setIsNewGameStarted(true); }}>Start</button>
