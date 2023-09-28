@@ -38,8 +38,7 @@ function App() {
       score: retryCount
     }
 
-    fetch('/highScores', {
-      method: 'POST',
+    fetch('/highScoresPost', {
       body: JSON.stringify(request) 
     }).then((res) => {
       return res.json();
