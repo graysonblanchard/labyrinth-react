@@ -5,7 +5,7 @@ import { EasyMaps } from '../maps/EasyMaps';
 import { MedMaps } from '../maps/MedMaps';
 import { HardMaps } from '../maps/HardMaps';
 import { Difficulty, MoveDirection } from '../App';
-//import { SolveGame } from '../services/SolveGame';
+//import { SolveGame } from '../functions/SolveGame';
 
 export interface IBoardProps {
   difficulty: Difficulty;
