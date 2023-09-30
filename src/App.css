@@ -23,14 +23,15 @@
 
 .title-and-highscores {
   width: 280px;
+  align-self: flex-start;
 }
 
 .game-title {
   font-size: 40px;
   color: #fff8e7;
   font-family: 'Courier New', Courier, monospace;
-  margin-top: 0;
   position: relative;
+  margin: 22px 0;
 }
 
 .high-scores {
@@ -52,7 +53,7 @@
 .high-scores-title {
   border-bottom: 1px solid #fff8e7;
   padding-bottom: 15px;
-  font-size: 26px;
+  font-size: 24px;
   width: 75%;
 }
 
@@ -98,12 +99,12 @@
 
 .btnPagination.disabled {
   cursor: default;
-  border: 1px solid rgba(255, 248, 231, 0.6);
-  color: rgba(255, 248, 231, 0.6);
+  border: 1px solid rgba(255, 248, 231, 0.4);
+  color: rgba(255, 248, 231, 0.4);
 }
 
 .btnPagination.prev {
-  right: 58%;
+  right: 55%;
 }
 .btnPagination.next {
   right: 35%;
