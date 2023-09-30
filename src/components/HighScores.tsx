@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState }from 'react';
 import { MoonLoader } from 'react-spinners';
 import { Difficulty } from '../App';
 
@@ -18,6 +18,18 @@ export interface IHighScoresProps {
 
 export function HighScores(props: IHighScoresProps) {
   const { highScores, difficulty } = { ...props };
+  const [ pageStartCount, setPageStartCount ] = useState<number>(0);
+  const [ isEndOfPagination, setIsEndOfPagination ] = useState<boolean>(false);
+
+  useEffect(() => {
+    if(highScores) {
+      if((pageStartCount + 9) > highScores.filter((score: IHighScore) => { return score.Difficulty === difficulty }).length) {
+          setIsEndOfPagination(true);
+        }
+      else
+        setIsEndOfPagination(false);
+    }
+  }, [highScores, difficulty, pageStartCount]);
 
   return (
     <div className="high-scores">
@@ -30,22 +42,33 @@ export function HighScores(props: IHighScoresProps) {
           />
         }
         {highScores && 
-        // add pagination to show more than top 10?
           <>
             <div className='high-scores-col-names'>
               <span className='high-scores-name'>Name</span>
               <span className='high-scores-retries'>Retries</span>
             </div>
             <div className="high-scores-list">
-                {highScores.filter((score: IHighScore) => { return score.Difficulty === difficulty }).slice(0, 10).map((highScore: IHighScore, index: number) => {
-                  return (
-                    <div className="high-score" key={'highScore-' + highScore.Id}>
-                      <span className='high-score-index'>{(index + 1) + '. '}</span>
-                      <span className='high-score-name'>{highScore.Name}</span>
-                      <span className='high-score-score'>{highScore.Score}</span>
-                    </div>
-                  ) 
+                {highScores
+                  .filter((score: IHighScore) => { return score.Difficulty === difficulty })
+                  .slice(pageStartCount, pageStartCount + 10)
+                  .map((highScore: IHighScore, index: number) => {
+                    return (
+                      <div className="high-score" key={'highScore-' + highScore.Id}>
+                        <span className='high-score-index'>{(index + pageStartCount + 1) + '. '}</span>
+                        <span className='high-score-name'>{highScore.Name}</span>
+                        <span className='high-score-score'>{highScore.Score}</span>
+                      </div>
+                    ) 
                 })}
+                <button className={'btnPagination prev ' + ((pageStartCount <= 0) ? 'disabled' : '')} onClick={() => {
+                  if(pageStartCount > 0)
+                    setPageStartCount(pageStartCount - 10);
+                }}>{'<'}</button>
+                <button className={'btnPagination next ' + (isEndOfPagination ? 'disabled' : '')} onClick={() => {
+                  if(!isEndOfPagination) {
+                    setPageStartCount(pageStartCount + 10);
+                  }
+                }}>{'>'}</button>
             </div>
           </>
         }

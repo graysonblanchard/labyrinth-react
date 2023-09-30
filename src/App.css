@@ -42,6 +42,7 @@
   background-color: #363531;
   padding: 20px 30px;
   height: 440px;
+  position: relative;
 }
 
 .moon-loader {
@@ -81,6 +82,34 @@
   margin-right: auto;
 }
 
+.btnPagination {
+  background: none;
+  color: #fff8e7;
+  font-family: monospace;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #fff8e7;
+  border-radius: 10px;
+  position: absolute;
+  bottom: -38px;
+}
+
+.btnPagination.disabled {
+  cursor: default;
+  border: 1px solid rgba(255, 248, 231, 0.6);
+  color: rgba(255, 248, 231, 0.6);
+}
+
+.btnPagination.prev {
+  right: 58%;
+}
+.btnPagination.next {
+  right: 35%;
+}
+
+
 .board {
   display: flex;
   flex-wrap: wrap;
@@ -96,7 +125,7 @@
   font-size: 14px;
   position: absolute;
   bottom: -22px;
-  right: 2px;
+  right: 4px;
   font-weight: bold;
   color: rgb(255, 248, 231, 0.4);
 }

@@ -6,7 +6,7 @@ const Goal = SquareTypes.Goal;
 //const Player = SquareTypes.Player;
 
 
-// --- Med solution: ---
+// --- Solution: ---
 // right up right right up up up left
 // up right right up right right down down
 // down left down right down down right right
