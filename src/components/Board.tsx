@@ -3,6 +3,7 @@ import { Square } from './Square';
 import { SquareTypes } from "./Square";
 import { EasyMaps, MedMaps, HardMaps } from './Maps';
 import { Difficulty, MoveDirection } from '../App';
+import { SolveGame } from '../services/SolveGame';
 
 export interface IBoardProps {
   difficulty: Difficulty;
@@ -17,12 +18,15 @@ function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCoun
 
   switch (difficulty) {
     case Difficulty.Easy:
+      //SolveGame(EasyMaps, playerPosition);
       currentMap = EasyMaps[moveCount % 3];
       break;
     case Difficulty.Medium:
+      //SolveGame(MedMaps, playerPosition);
       currentMap = MedMaps[moveCount % 5];
       break;
     case Difficulty.Hard:
+      //SolveGame(HardMaps, playerPosition);
       currentMap = HardMaps[moveCount % 7];
       break;
   }

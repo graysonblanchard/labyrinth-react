@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { MoonLoader } from 'react-spinners';
-import { Difficulty } from './Board';
+import { Difficulty } from '../App';
 
 export interface IHighScore {
   Id: number;
