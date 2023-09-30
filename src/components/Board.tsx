@@ -10,7 +10,7 @@ export interface IBoardProps {
   isGameStarted: boolean;
   isRetryGame: boolean;
   retryCount: number;
-  triggerGameOver(): any;
+  triggerGameOver(moveCount: number): any;
 }
 
 function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCount: number) {
@@ -122,7 +122,7 @@ export function Board(props: IBoardProps) {
       }
       if(newPosition.includes(-1)) {
         setIsGameOver(true);
-        triggerGameOver();
+        triggerGameOver(moveCount);
       }
     }
   }

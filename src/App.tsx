@@ -31,11 +31,12 @@ function App() {
   const [highScores, setHighScores] = useState<IHighScore[]>();
   const [showModal, setShowModal] = useState<boolean>(false);
   const [username, setUsername] = useState<string>('');
+  const [moveCount, setMoveCount] = useState<number>(0);
 
   useEffect(() => {
     let localStorageRetry = localStorage.getItem("retryCount") ? JSON.parse(localStorage.getItem("retryCount") as string)[diff] : 0;
     setRetryCount(localStorageRetry);
-  }, [diff])
+  }, [diff]);
 
   useEffect(() => {
     fetch('/highScores').then((res) => {
@@ -53,6 +54,7 @@ function App() {
     const request = {
       name: username,
       score: retryCount,
+      moves: moveCount,
       difficulty: diff
     }
 
@@ -104,8 +106,6 @@ function App() {
     setShowModal(false);
     setIsNewGameStarted(false);
     setIsRetryGame(false);
-    //setRetryCount(0);
-    //setLocalStorageRetry(0, diff);
   }
 
   return (
@@ -135,9 +135,10 @@ function App() {
             isGameStarted={isNewGameStarted}
             isRetryGame={isRetryGame}
             retryCount={retryCount}
-            triggerGameOver={() => {
+            triggerGameOver={(moveCount: number) => {
               setTimeout(() => {
                 setShowModal(true);
+                setMoveCount(moveCount);
                 setLocalStorageRetry(0, diff);
               }, 200);
             }}
@@ -160,8 +161,8 @@ function App() {
                   <span className='select-label'>Difficulty:</span>
                   <select className='select-difficulty' value={diff} onChange={(e) => { setDiff(e.target.value as Difficulty); }}>
                     <option value={Difficulty.Easy}>Easy</option>
-                    {/* <option value={Difficulty.Medium}>Medium</option>
-                    <option value={Difficulty.Hard}>Hard</option> */}
+                    <option value={Difficulty.Medium}>Medium</option>
+                    <option value={Difficulty.Hard}>Hard</option>
                   </select>
                 </div>
                 <button className='btnPrimary' onClick={() => { setIsNewGameStarted(true); }}>Start</button>

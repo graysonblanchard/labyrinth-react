@@ -6,6 +6,7 @@ export interface IHighScore {
   Id: number;
   Name: string;
   Score: number;
+  Moves: number;
   Difficulty: Difficulty;
   Date?: Date;
 }
@@ -36,6 +37,7 @@ export function HighScores(props: IHighScoresProps) {
                   <div className="high-score" key={'highScore-' + highScore.Id}>
                       <span className='high-score-name'>{(index + 1) + '. ' + highScore.Name}</span>
                       <span className='high-score-score'>{highScore.Score}</span>
+                      <span className='high-score-moves'>{highScore.Moves}</span>
                     </div>
                   ) 
                 })}
