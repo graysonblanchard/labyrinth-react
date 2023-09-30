@@ -35,12 +35,11 @@ export function HighScores(props: IHighScoresProps) {
               {highScores.filter((score: IHighScore) => { return score.Difficulty === difficulty }).slice(0, 10).map((highScore: IHighScore, index: number) => {
                 return (
                   <div className="high-score" key={'highScore-' + highScore.Id}>
-                      <span className='high-score-name'>{(index + 1) + '. ' + highScore.Name}</span>
-                      <span className='high-score-score'>{highScore.Score}</span>
-                      <span className='high-score-moves'>{highScore.Moves}</span>
-                    </div>
-                  ) 
-                })}
+                    <span className='high-score-name'>{(index + 1) + '. ' + highScore.Name}</span>
+                    <span className='high-score-score'>{highScore.Score}</span>
+                  </div>
+                ) 
+              })}
           </div>
         }
     </div>
