@@ -1,0 +1,107 @@
+import { SquareTypes } from "../components/Square";
+
+//const Wall = SquareTypes.Wall;
+const Space = SquareTypes.Space;
+const Goal = SquareTypes.Goal;
+//const Player = SquareTypes.Player;
+
+export const HardMaps: SquareTypes[][][] = [
+    [
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
+    ],
+    [
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
+    ],
+    [
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
+    ],
+    [
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
+    ],
+    [
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
+    ],
+    [
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
+    ],
+    [
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space],
+        [Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Space,Goal]
+    ]
+];

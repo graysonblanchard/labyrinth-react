@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Square } from './Square';
 import { SquareTypes } from "./Square";
-import { EasyMaps, MedMaps, HardMaps } from './Maps';
+import { EasyMaps } from '../maps/EasyMaps';
+import { MedMaps } from '../maps/MedMaps';
+import { HardMaps } from '../maps/HardMaps';
 import { Difficulty, MoveDirection } from '../App';
 //import { SolveGame } from '../services/SolveGame';
 
@@ -19,14 +21,17 @@ function generateGrid(difficulty: Difficulty, playerPosition: number[], moveCoun
   switch (difficulty) {
     case Difficulty.Easy:
       //SolveGame(EasyMaps, playerPosition);
+      //console.log("map index", moveCount % 3);
       currentMap = EasyMaps[moveCount % 3];
       break;
     case Difficulty.Medium:
       //SolveGame(MedMaps, playerPosition);
+      //console.log("map index", moveCount % 5);
       currentMap = MedMaps[moveCount % 5];
       break;
     case Difficulty.Hard:
       //SolveGame(HardMaps, playerPosition);
+      //console.log("map index", moveCount % 7);
       currentMap = HardMaps[moveCount % 7];
       break;
   }
@@ -127,13 +132,11 @@ export function Board(props: IBoardProps) {
     }
   }
 
-  // TODO:
-  // - FACTOR OUT LOGIC FROM HERE INTO APP.TSX (!)
-  // - CREATE DIFFERENT COMPONENTS TO BREAK THINGS UP FURTHER (!)
-  //
+  // TO-DO:
+  // - factor things out from here to App.tsx?
+  // - break things up further into components?
+  // - merge retryCount & localStorage to one variable if possible?
   // - merge init into main branch, use main for deployment
-  // - include move count to high scores?
-  // - merge retryCount & localStorage to one variable?
   //
   // - for yuga -> end of game modal (only board has awareness)
 

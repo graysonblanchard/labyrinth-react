@@ -30,6 +30,7 @@
   color: #fff8e7;
   font-family: 'Courier New', Courier, monospace;
   margin-top: 0;
+  position: relative;
 }
 
 .high-scores {
@@ -62,7 +63,6 @@
   width: 100%;
 }
 
-
 .high-scores-list {
   width: 100%;
   margin: 15px 0;
@@ -87,6 +87,18 @@
   max-width: 600px;
   max-height: 600px;
   margin: 0 56px;
+  position: relative;
+}
+
+.board::after {
+  font-family: 'Courier New', Courier, monospace;
+  content: '\00a9  Grayson Blanchard';
+  font-size: 14px;
+  position: absolute;
+  bottom: -22px;
+  right: 2px;
+  font-weight: bold;
+  color: rgb(255, 248, 231, 0.4);
 }
 
 .board .square {
