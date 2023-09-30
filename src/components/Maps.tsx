@@ -100,6 +100,69 @@ export const MedMaps: SquareTypes[][][] = [
         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Goal]
     ]
 ];
+ 
+//export const MedMapsSolve: SquareTypes[][][] = [
+//     [
+//         [Wall,Space,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Space,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Space,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Space,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Goal]
+//     ],
+//     [
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Space,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Space,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Space,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Space],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Goal]
+//     ],
+//     [
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Space,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Space,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Space,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Goal]
+//     ],
+//     [
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Space,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Space,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Space,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Goal]
+//     ],
+//     [
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Space,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Space,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Space,Wall,Wall],
+//         [Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Goal]
+//     ]
+// ];
 
 export const HardMaps: SquareTypes[][][] = [
     [

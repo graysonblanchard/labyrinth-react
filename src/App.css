@@ -22,7 +22,7 @@
 }
 
 .title-and-highscores {
-  width: 260px;
+  width: 280px;
 }
 
 .game-title {
@@ -50,19 +50,34 @@
   border-bottom: 1px solid #fff8e7;
   padding-bottom: 15px;
   font-size: 26px;
+  width: 75%;
 }
+
+.high-scores-col-names {
+  font-size: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 
 .high-scores-list {
   width: 100%;
-  margin: 20px 0;
+  margin: 15px 0;
   font-size: 20px;
 }
 
 .high-score {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 10px;
+}
+
+.high-score-name {
+  margin-left: 10px;
+  margin-right: auto;
 }
 
 .board {
@@ -121,6 +136,19 @@
   align-items: center;
 }
 
+.help-tooltip {
+  border: 1px solid rgba(255, 248, 231, 0.6);
+  color: rgba(255, 248, 231, 0.6);
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 22px;
+  width: 22px;
+  height: 22px;
+  padding: 1px;
+  cursor: default;
+  margin-top: 15px;
+}
+
 .retry-count {
   font-size: 20px;
   margin: 10px 0;
@@ -143,6 +171,14 @@
   color: #282c34;
 }
 
+.btnPrimary.start {
+  margin: 30px 0;
+}
+
+.btnPrimary.quit {
+  margin-bottom: 30px;
+}
+
 .select-group {
   display: flex;
   flex-direction: column;
@@ -158,7 +194,6 @@
 .select-difficulty {
   padding: 5px;
   font-size: 16px;
-  margin-bottom: 20px;
   border: 1px solid #fff8e7;
   border-radius: 5px;
   background-color: #fff8e7;

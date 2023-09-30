@@ -21,7 +21,7 @@ export function HighScores(props: IHighScoresProps) {
 
   return (
     <div className="high-scores">
-        <span className="high-scores-title">High Scores:</span>
+        <span className="high-scores-title">High Scores</span>
         {!highScores &&
           <MoonLoader
             size={40}
@@ -31,16 +31,23 @@ export function HighScores(props: IHighScoresProps) {
         }
         {highScores && 
         // add pagination to show more than top 10?
-          <div className="high-scores-list">
-              {highScores.filter((score: IHighScore) => { return score.Difficulty === difficulty }).slice(0, 10).map((highScore: IHighScore, index: number) => {
-                return (
-                  <div className="high-score" key={'highScore-' + highScore.Id}>
-                    <span className='high-score-name'>{(index + 1) + '. ' + highScore.Name}</span>
-                    <span className='high-score-score'>{highScore.Score}</span>
-                  </div>
-                ) 
-              })}
-          </div>
+          <>
+            <div className='high-scores-col-names'>
+              <span className='high-scores-name'>Name</span>
+              <span className='high-scores-retries'>Retries</span>
+            </div>
+            <div className="high-scores-list">
+                {highScores.filter((score: IHighScore) => { return score.Difficulty === difficulty }).slice(0, 10).map((highScore: IHighScore, index: number) => {
+                  return (
+                    <div className="high-score" key={'highScore-' + highScore.Id}>
+                      <span className='high-score-index'>{(index + 1) + '. '}</span>
+                      <span className='high-score-name'>{highScore.Name}</span>
+                      <span className='high-score-score'>{highScore.Score}</span>
+                    </div>
+                  ) 
+                })}
+            </div>
+          </>
         }
     </div>
   );

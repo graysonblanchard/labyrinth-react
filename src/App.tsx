@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Board } from './components/Board';
 import { HighScores, IHighScore } from './components/HighScores';
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 export enum Difficulty {
   Easy = 'easy',
@@ -21,6 +22,14 @@ interface IBackendData {
   recordset: IHighScore[];
   output: any;
   rowsAffected: number[];
+}
+
+const TooltipStyles = {
+  fontSize: '18px',
+  textOverflow: 'wrap',
+  maxWidth: '250px',
+  lineHeight: '28px',
+  padding: '10px'
 }
 
 function App() {
@@ -118,7 +127,7 @@ function App() {
             <h1>You win!</h1>
             <div className='winning-modal-scores'>Score: {retryCount} retries</div>
             <div className='winning-modal-prompt'>
-              <input placeholder='Enter name...' id='username' maxLength={18} value={username} onChange={(e) => { setUsername(e.target.value)}} />
+              <input placeholder='Enter name...' id='username' maxLength={15} value={username} onChange={(e) => { setUsername(e.target.value)}} />
               <button className='winning-modal-submit btnPrimary' onClick={() => { submitScore(); }}>Submit</button>
             </div>
           </div>
@@ -147,10 +156,10 @@ function App() {
             {(isNewGameStarted || isRetryGame) &&
               <>
                 <span className='retry-count'>Retries: {retryCount}</span>
-                <button className='btnPrimary' onClick={() => { setIsRetryGame(true); setRetryCount(retryCount + 1); setLocalStorageRetry(retryCount + 1, diff); }}>
+                <button className='btnPrimary retry' onClick={() => { setIsRetryGame(true); setRetryCount(retryCount + 1); setLocalStorageRetry(retryCount + 1, diff); }}>
                   Retry
                 </button>
-                <button className='btnPrimary' onClick={() => { resetGame(); }}>
+                <button className='btnPrimary quit' onClick={() => { resetGame(); }}>
                   Quit
                 </button>
               </>
@@ -165,9 +174,16 @@ function App() {
                     <option disabled value={Difficulty.Hard}>Hard</option>
                   </select>
                 </div>
-                <button className='btnPrimary' onClick={() => { setIsNewGameStarted(true); }}>Start</button>
+                <button className='btnPrimary start' onClick={() => { setIsNewGameStarted(true); }}>Start</button>
               </>
             }
+            <span data-tooltip-id='help-tooltip' className='help-tooltip'>?</span>
+            <ReactTooltip 
+              id='help-tooltip'
+              place='top'
+              content='Use your arrow keys to move the green square to the gold one. Watch where you step!'
+              style={TooltipStyles}
+            />
           </div>
         </div>
       </header>
