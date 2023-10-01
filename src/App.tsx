@@ -161,7 +161,7 @@ function App() {
                 <button className='btnPrimary retry' onClick={() => { setIsRetryGame(true); setRetryCount(retryCount + 1); setLocalStorageRetry(retryCount + 1, diff); }}>
                   Retry
                 </button>
-                <button className='btnPrimary quit' onClick={() => { resetGame(); }}>
+                <button className='btnPrimary quit' onClick={() => { resetGame(); setRetryCount(retryCount + 1); }}>
                   Quit
                 </button>
               </>
