@@ -136,6 +136,7 @@ export function Board(props: IBoardProps) {
   // - factor things out from here to App.tsx?
   // - break things up further into components?
   // - merge retryCount & localStorage to one variable if possible?
+  // - separate DB environments ! (dev vs prod)
   //
   // - for yuga -> end of game modal (only board has awareness)
 
