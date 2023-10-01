@@ -181,7 +181,7 @@ function App() {
             <ReactTooltip 
               id='help-tooltip'
               place='top'
-              content='Use your arrow keys to move the green square to the gold one. Watch where you step!'
+              content='Use your arrow keys to move the green square to the gold square. Watch where you step!'
               style={TooltipStyles}
             />
           </div>
