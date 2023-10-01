@@ -31,7 +31,7 @@
   color: #fff8e7;
   font-family: 'Courier New', Courier, monospace;
   position: relative;
-  margin: 22px 0;
+  margin: 25px 0;
 }
 
 .high-scores {
@@ -52,13 +52,13 @@
 
 .high-scores-title {
   border-bottom: 1px solid #fff8e7;
-  padding-bottom: 15px;
-  font-size: 24px;
+  padding-bottom: 12px;
+  font-size: 22px;
   width: 75%;
 }
 
 .high-scores-col-names {
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
@@ -67,8 +67,8 @@
 
 .high-scores-list {
   width: 100%;
-  margin: 15px 0;
-  font-size: 20px;
+  margin: 18px 0;
+  font-size: 18px;
 }
 
 .high-score {
@@ -94,13 +94,13 @@
   border: 1px solid #fff8e7;
   border-radius: 10px;
   position: absolute;
-  bottom: -38px;
+  bottom: 12px;
 }
 
 .btnPagination.disabled {
   cursor: default;
-  border: 1px solid rgba(255, 248, 231, 0.4);
-  color: rgba(255, 248, 231, 0.4);
+  border: 1px solid rgba(255, 248, 231, 0.25);
+  color: rgba(255, 248, 231, 0.25);
 }
 
 .btnPagination.prev {
