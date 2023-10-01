@@ -58,7 +58,7 @@ function App() {
   }, []);
 
   function submitScore() {
-    console.log('score submitted');
+    console.log('submitting score...');
 
     const request = {
       name: username,
@@ -80,7 +80,10 @@ function App() {
       console.log('highScores post res', data.recordset);
       setHighScores(data.recordset);
     });
+    
     resetGame();
+    setRetryCount(0);
+    setLocalStorageRetry(0, diff);
   }
 
   function setLocalStorageRetry(value: number, diff: Difficulty) {
@@ -123,7 +126,7 @@ function App() {
         <div className='winning-modal'>
           <div className='winning-modal-background'></div>
           <div className='winning-modal-window'>
-            <div className='winning-modal-close' onClick={() => { resetGame(); setRetryCount(0); }} />
+            <div className='winning-modal-close' onClick={() => { resetGame(); }} />
             <h1>You win!</h1>
             <div className='winning-modal-scores'>Score: {retryCount} retries</div>
             <div className='winning-modal-prompt'>
@@ -148,7 +151,6 @@ function App() {
               setTimeout(() => {
                 setShowModal(true);
                 setMoveCount(moveCount);
-                setLocalStorageRetry(0, diff);
               }, 200);
             }}
           />
