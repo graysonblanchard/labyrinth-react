@@ -54,6 +54,10 @@ function App() {
     .then((data: IBackendData) => {
       console.log('highScores get res', data.recordset);
       setHighScores(data.recordset);
+    })
+    .catch((err) => {
+      console.error('Error fetching high scores:', err);
+      setHighScores([]);
     });
   }, []);
 
